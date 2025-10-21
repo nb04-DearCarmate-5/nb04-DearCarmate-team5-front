@@ -5,14 +5,14 @@ const middleware = async (request: NextRequest) => {
   const { pathname } = request.nextUrl
   const refreshTokenCookie = request.cookies.get('refreshToken')
 
-  if (
-    !refreshTokenCookie &&
-    pathname !== '/signin' &&
-    pathname !== '/signup' &&
-    pathname !== '/setting'
-  ) {
-    return NextResponse.redirect(new URL('/signin', request.url))
-  }
+  // if (
+  //   !refreshTokenCookie &&
+  //   pathname !== '/signin' &&
+  //   pathname !== '/signup' &&
+  //   pathname !== '/setting'
+  // ) {
+  //   return NextResponse.redirect(new URL('/signin', request.url))
+  // }
 
   if (
     refreshTokenCookie &&
