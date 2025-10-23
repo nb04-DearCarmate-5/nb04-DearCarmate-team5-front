@@ -24,8 +24,12 @@ const ImageUploadConnect = ({ name }: ImageUploadConnectProps) => {
     if (!file) return
     try {
       setIsLoading(true)
-      const imageUrl = await uploadImage(file)
-      if (imageUrl) setValue(name, imageUrl)
+      const result = await uploadImage(file)
+      if (result) {
+        const { imageUrl, imageId } = result
+        setValue(name, imageUrl)
+        setValue('imageId', imageId)
+      }
     } catch (error) {
       const text = (error as AxiosError<AxiosErrorData>)?.response?.data?.message || '파일 업로드에 실패했습니다. 다시 시도해주세요.'
       alert(text)

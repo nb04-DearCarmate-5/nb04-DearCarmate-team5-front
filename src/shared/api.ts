@@ -386,10 +386,10 @@ export const uploadFile = async (file: File): Promise<{ contractDocumentId: numb
 
 export const uploadImage = async (
   file: File,
-): Promise<{ imageUrl: string }> => {
+): Promise<{ imageUrl: string; imageId: number }> => {
   const formData = new FormData()
   formData.append('file', file)
-  const response = await axios.postForm<{ imageUrl: string }>(
+  const response = await axios.postForm<{ imageUrl: string; imageId: number }>(
     '/images/upload',
     formData,
   )

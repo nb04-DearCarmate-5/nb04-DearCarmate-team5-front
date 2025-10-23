@@ -9,7 +9,7 @@ const uploadImage = async (file: File) => {
     return
   }
   const response = await uploadImageAPI(file)
-  return response.imageUrl
+  return { imageUrl: response.imageUrl, imageId: response.imageId }
 }
 
 export default uploadImage

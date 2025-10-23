@@ -298,6 +298,7 @@ export type PasswordCheckFormInput = {
 }
 
 export type ProfileFormInput = {
+  imageId?: number,
   imageUrl: string | null,
   phoneNumber: string,
   employeeNumber: string,

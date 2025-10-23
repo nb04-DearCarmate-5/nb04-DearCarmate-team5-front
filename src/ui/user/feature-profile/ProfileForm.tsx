@@ -32,6 +32,7 @@ const ProfileForm = ({ }: ProfileFormProps) => {
     authCheckDialogRef.current?.close()
     const editedUserData = {
       ...data,
+      imageId: data.imageId,
       password: data.password ? data.password : undefined,
       passwordConfirmation: data.passwordConfirmation ? data.passwordConfirmation : undefined,
     }
